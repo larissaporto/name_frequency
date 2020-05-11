@@ -13,6 +13,14 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require 'active_support/all'
+PROJECT_ROOT = File.expand_path('..', __dir__)
+
+Dir.glob(File.join(PROJECT_ROOT, 'lib', '*.rb')).each do |file|
+  autoload File.basename(file, '.rb').camelize, file
+end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
