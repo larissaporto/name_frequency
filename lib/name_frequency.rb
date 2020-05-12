@@ -1,4 +1,6 @@
 require_relative 'states'
+require 'sqlite3'
+
 class NameFrequency
   def main
     begin
